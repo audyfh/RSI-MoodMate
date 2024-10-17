@@ -1,0 +1,56 @@
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+.masthead{
+    background-size: cover; /* Update this line */
+    min-height: 100vh;
+    width: 100%;
+    position: relative;
+}
+
+.color-overlay {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+}
+
+h1,h2{
+    font-weight: bold;
+}
+
+.highlight {
+    color: #A594F9;
+}
+
+.custom-btn {
+    border-color: #A594F9; /* Mengubah warna outline */
+    border-width: 2px;
+    color: black;        /* Mengubah warna teks */
+}
+
+.custom-btn:hover {
+    background-color: #A594F9; /* Mengubah warna background saat hover */
+    color: white;              /* Mengubah warna teks saat hover */
+}
+
+.accordion{
+    --bs-accordion-active-bg: #ffffff;
+    --bs-accordion-active-color: #000000;
+    --accordion-button-focus-box-shadow: none;
+}
+
+.accordion-button.collapsed{
+    border: 1px solid #000000;
+}
+
+.accordion-item:has(.accordion-button:not(.collapsed)){
+    border: 1px solid #000000;
+}
+
+.accordion-button:not(.collapsed){
+    box-shadow: none;
+}
+
+
+
