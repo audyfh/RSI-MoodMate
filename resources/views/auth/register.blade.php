@@ -32,7 +32,7 @@
                           </div>
                         <button type="submit" class="btn btn-primary w-100 rounded-3" style="background-color: #A594F9; color:black" ><b>Register</b></button>
                     </form>
-                    <p class="mt-3">Already have an account?<a href="" class="text-danger">Sign in now</a></p>
+                    <p class="mt-3">Already have an account?<a href="{{ route('login.form') }}" class="text-danger">Sign in now</a></p>
                 </div>
                 <div class="col-md">
                     <div class="text-center">

@@ -14,7 +14,7 @@
 <body>
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand ms-4" href="#">
+        <a class="navbar-brand ms-4" href="/">
             <img src="{{ asset('resource/logo.svg') }}" alt="Logo" style="height:40px;">
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -29,15 +29,15 @@
                     <a class="nav-link" href="#breath">Breath of Calm</a>
                 </li>
                 <li class="nav-item me-4">
-                    <a class="nav-link" href="#chat">Mind Chat</a>
+                    <a class="nav-link" href="/mindchat">Mind Chat</a>
                 </li>
                 <li class="nav-item me-4">
                     <a class="nav-link" href="#quest">Happy Quest</a>
                 </li>
             </ul>
             <div class="navbar-buttons me-4">
-                <a href="/register" class="btn btn-primary rounded-pill me-3" style="padding: 1px 8px;background-color: #A594F9; color: black;">Register</a>
-                <a href="{{ route('login') }}" class="btn btn-dark rounded-pill me-3" style="padding: 1px 15px;">Login</a>
+                <a href="{{ route('register.form') }}" class="btn btn-primary rounded-pill me-3" style="padding: 1px 8px;background-color: #A594F9; color: black;">Register</a>
+                <a href="{{ route('login.form') }}" class="btn btn-dark rounded-pill me-3" style="padding: 1px 15px;">Login</a>
             </div>
         </div>
     </nav>

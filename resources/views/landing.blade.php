@@ -9,7 +9,7 @@
             <div class="col-md-6 d-flex flex-column justify-content-center align-items-center">
                 <h2>Transform <span class="highlight">Stress</span> into</h2>
                 <h2><span class="highlight">Strength</span> with MoodMate</h2>
-                <a href="#get-started" class="btn btn-outline-secondary rounded-pill custom-btn">Get Started</a>
+                <a href="#about" class="btn btn-outline-secondary rounded-pill custom-btn">Get Started</a>
             </div>
            
             <div class="col-md-6 d-flex flex-column justify-content-center align-items-center">

@@ -20,7 +20,7 @@
                         </div>
                         <button type="submit" class="btn btn-primary w-100 rounded-3" style="background-color: #A594F9; color:black" >Login</button>
                     </form>
-                    <p class="mt-3">Don't have an account yet? <a href="" class="text-danger">Sign Up now</a></p>
+                    <p class="mt-3">Don't have an account yet? <a href="{{ route('register.form') }}" class="text-danger">Sign Up now</a></p>
                 </div>
                 <div class="col-md">
                     <div class="text-center">
