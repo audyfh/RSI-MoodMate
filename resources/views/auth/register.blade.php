@@ -8,11 +8,11 @@
             <h2 class="mb-4 text-center">Create an Account</h2>
             <div class="row">
                 <div class="col-md">
-                    <form action="" method="POST">
+                    <form action="{{ route('register') }}" method="POST">
                         @csrf
                         <div class="mb-3">
-                            <label for="username" class="form-label"><b>USERNAME*</b></label>
-                            <input type="text" class="form-control" name="username" id="username" placeholder="Type your username here" required>
+                            <label for="name" class="form-label"><b>USERNAME*</b></label>
+                            <input type="text" class="form-control" name="name" id="name" placeholder="Type your username here" required>
                         </div>
                         <div class="mb-3">
                             <label for="fullname" class="form-label"><b>FULL NAME*</b></label>
@@ -30,7 +30,7 @@
                             <input type="checkbox" class="form-check-input" id="exampleCheck1">
                             <label class="form-check-label" for="exampleCheck1">I agree to the term of service</label>
                           </div>
-                        <button type="submit" class="btn btn-primary w-100 rounded-3" style="background-color: #A594F9; color:black" ><b>Register</b></button>
+                        <button  type="submit" class="btn btn-primary w-100 rounded-3" style="background-color: #A594F9; color:black" ><b>Register</b></button>
                     </form>
                     <p class="mt-3">Already have an account?<a href="{{ route('login.form') }}" class="text-danger">Sign in now</a></p>
                 </div>

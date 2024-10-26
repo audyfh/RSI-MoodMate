@@ -1,3 +1,4 @@
+@use('\Illuminate\Support\Facades\Auth')
 <!-- resources/views/layouts/app.blade.php -->
 <!DOCTYPE html>
 <html lang="en">
@@ -26,19 +27,26 @@
                     <a class="nav-link" href="#emotion">Emotion Track</a>
                 </li>
                 <li class="nav-item me-4">
-                    <a class="nav-link" href="#breath">Breath of Calm</a>
+                    <a class="nav-link" href="/user/boc">Breath of Calm</a>
                 </li>
                 <li class="nav-item me-4">
-                    <a class="nav-link" href="/mindchat">Mind Chat</a>
+                    <a class="nav-link" href="/user/mindchat">Mind Chat</a>
                 </li>
                 <li class="nav-item me-4">
-                    <a class="nav-link" href="#quest">Happy Quest</a>
+                    <a class="nav-link" href="/user/happyquest">Happy Quest</a>
                 </li>
             </ul>
-            <div class="navbar-buttons me-4">
-                <a href="{{ route('register.form') }}" class="btn btn-primary rounded-pill me-3" style="padding: 1px 8px;background-color: #A594F9; color: black;">Register</a>
-                <a href="{{ route('login.form') }}" class="btn btn-dark rounded-pill me-3" style="padding: 1px 15px;">Login</a>
-            </div>
+            @auth
+                <div class="navbar-buttons me-4">
+                    <a href="{{ route('profile.form') }}" class="btn btn-primary rounded-pill me-3" style="padding: 1px 8px;background-color: #A594F9; color: black;">{{ Auth::user()->name }}</a>
+                </div>
+            @else
+                <div class="navbar-buttons me-4">
+                    <a href="{{ route('register.form') }}" class="btn btn-primary rounded-pill me-3" style="padding: 1px 8px;background-color: #A594F9; color: black;">Register</a>
+                    <a href="{{ route('login.form') }}" class="btn btn-dark rounded-pill me-3" style="padding: 1px 15px;">Login</a>
+                </div>
+            @endauth
+           
         </div>
     </nav>
 

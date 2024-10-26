@@ -31,8 +31,13 @@
                 <input type="password" class="form-control" id="password" name="password" placeholder="Type your password here" required>
             </div>
             <div class="d-flex justify-content-end mt-5">
-                <a href="#" class="btn btn-light rounded-pill me-3 w-25" style="padding: 1px 15px; border:1px solid black">Log out</a>
-                <a href="#" class="btn btn-primary rounded-pill me-3 w-25" style="padding: 1px 8px;background-color: #A594F9; color: black;">Edit Profile</a>
+                <form action="{{ route('profile.logout') }}" method="POST" class="w-100 justify-content-end d-flex">
+                        @csrf
+                        {{-- <a href="#" type="submit" class="btn btn-light rounded-pill me-3 w-25" style="padding: 1px 15px; border:1px solid black">Log out</a> --}}
+                        <button type="submit" class="btn btn-light rounded-pill me-3 w-25" style="border:1px solid black">Logout</button>
+                </form>
+                <button class="btn btn-primary rounded-pill me-3 w-25" style="padding: 1px 8px;background-color: #A594F9; color: black;">Edit Profile</button>
+                        {{-- <a href="#" class="btn btn-primary rounded-pill me-3 w-25" style="padding: 1px 8px;background-color: #A594F9; color: black;">Edit Profile</a> --}}
             </div>
         </div>
     </div>
