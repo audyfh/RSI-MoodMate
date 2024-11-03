@@ -19,7 +19,7 @@ class PsikologSeeder extends Seeder
             'alamat' => 'Jl. Melati No.5, Pekanbaru',
             'nomor_telepon' => '081234567890',
             'email' => 'yanto@tulip.com',
-            'foto' => 'yanto.jpg' // Menyimpan nama file foto
+            'foto' => 'yanto.png' // Menyimpan nama file foto
         ]);
 
         Psikolog::create([
@@ -28,7 +28,7 @@ class PsikologSeeder extends Seeder
             'alamat' => 'Jl. Raya Depok No.10, Depok',
             'nomor_telepon' => '081234567891',
             'email' => 'rheza@polda-depok.com',
-            'foto' => 'rheza.jpg'
+            'foto' => 'rheza.png'
         ]);
 
         Psikolog::create([
@@ -37,7 +37,7 @@ class PsikologSeeder extends Seeder
             'alamat' => 'Jl. Tugu No.7, Malang',
             'nomor_telepon' => '081234567892',
             'email' => 'audy@batu-malang.com',
-            'foto' => 'audy.jpg'
+            'foto' => 'audy.png'
         ]);
 
         Psikolog::create([
@@ -46,7 +46,7 @@ class PsikologSeeder extends Seeder
             'alamat' => 'Jl. Kartini No.3, Jakarta',
             'nomor_telepon' => '081234567893',
             'email' => 'dhafin@vincent.com',
-            'foto' => 'dhafin.jpg'
+            'foto' => 'dhafin.png'
         ]);
 
         Psikolog::create([
@@ -55,7 +55,7 @@ class PsikologSeeder extends Seeder
             'alamat' => 'Jl. Kartasura No.9, Solo',
             'nomor_telepon' => '081234567894',
             'email' => 'atha@pawon-ayu.com',
-            'foto' => 'atha.jpg'
+            'foto' => 'atha.png'
         ]);
 
         Psikolog::create([
@@ -64,7 +64,7 @@ class PsikologSeeder extends Seeder
             'alamat' => 'Jl. Raya Sentul No.5, Bogor',
             'nomor_telepon' => '081234567895',
             'email' => 'naufal@ui-sentul.com',
-            'foto' => 'naufal.jpg'
+            'foto' => 'naufal.png'
         ]);
 
         Psikolog::create([
@@ -73,7 +73,7 @@ class PsikologSeeder extends Seeder
             'alamat' => 'Jl. Pandanaran No.11, Semarang',
             'nomor_telepon' => '081234567896',
             'email' => 'bram@kue-semarang.com',
-            'foto' => 'bram.jpg'
+            'foto' => 'bram.png'
         ]);
     }
 }

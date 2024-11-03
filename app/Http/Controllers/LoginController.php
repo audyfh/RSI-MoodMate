@@ -34,7 +34,7 @@ class LoginController extends Controller
     {
         switch ($user->role) {
             case 'admin':
-                return redirect()->route('admin.dashboard');
+                return redirect()->route('admin.happyquest');
             case 'psikolog':
                 return redirect()->route('psikolog.dashboard');
             default:
