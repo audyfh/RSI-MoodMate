@@ -9,6 +9,7 @@ use App\Http\Controllers\LandingController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\MindChatController;
 use App\Http\Controllers\AdminQuestController;
+use App\Http\Controllers\CsController;
 use App\Http\Controllers\HappyQuestController;
 
 // Route::get('/',[LandingController::class,'index'])->name('landing');
@@ -42,6 +43,7 @@ Route::middleware(['auth'])->group(function () {
         Route::get('/user/boc',[BocController::class, 'index'])->name('boc');
         Route::get('/user/happyquest',[HappyQuestController::class,'index'])->name('happyquest');
         Route::post('/quests/{quest}/complete', [HappyQuestController::class, 'completeQuest'])->name('completequest');
+        Route::get('/user/communitysupport', [CsController::class,'index'])->name('communitysupport');
     });
 
     // Route Admin
