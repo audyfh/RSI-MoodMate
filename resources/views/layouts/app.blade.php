@@ -25,7 +25,7 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ms-auto me-4">
                 <li class="nav-item me-4">
-                    <a class="nav-link" href="#emotion">Emotion Track</a>
+                    <a class="nav-link" href="/user/emotiontrack">Emotion Track</a>
                 </li>
                 <li class="nav-item me-4">
                     <a class="nav-link" href="/user/boc">Breath of Calm</a>
