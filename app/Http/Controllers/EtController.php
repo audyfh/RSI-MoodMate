@@ -31,6 +31,25 @@ class EtController extends Controller
         return response()->json(['success' => 'Emotion Track berhasil disimpan']);
     }
 
+    public function update(Request $request, $id) {
+    
+        $request->validate([
+            'title' => 'required|string|max:255',
+            'content' => 'required|string',
+            'emotion' => 'required|in:happy,neutral,sad'
+        ]);
+
+        $emotionTrack = EmotionTrack::where('id', $id)->where('user_id', Auth::id())->firstOrFail();
+        $emotionTrack->update([
+            'title' => $request->title,
+            'content' => $request->content,
+            'emotion' => $request->emotion
+        ]);
+
+        return redirect()->route('emotion_track.index')->with('success', 'Emotion Track berhasil diperbarui');
+    }
+
+
     // Menghapus data emotion track
     public function destroy($id)
     {

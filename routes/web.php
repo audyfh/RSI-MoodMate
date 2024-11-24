@@ -48,6 +48,8 @@ Route::middleware(['auth'])->group(function () {
         Route::get('/user/emotiontrack',[EtController::class,'index'])->name('emotion_track.index');
         Route::post('/emotion-track', [EtController::class, 'store'])->name('emotion_track.store');
         Route::delete('/emotion-track/{id}', [EtController::class, 'destroy'])->name('emotion_track.destroy');
+        Route::put('/emotion_track/{id}', [EtController::class, 'update'])->name('emotion_track.update');
+
     });
 
     // Route Admin

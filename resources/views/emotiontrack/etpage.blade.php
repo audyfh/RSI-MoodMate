@@ -33,9 +33,12 @@
                         <td>
                              
                             <a href="#" data-bs-toggle="modal" data-bs-target="#detailModal"
-                            data-title="{{ $track->title }}" data-content="{{ $track->content }}"
+                            data-id="{{ $track->id }}"
+                            data-title="{{ $track->title }}"
+                            data-content="{{ $track->content }}"
+                            data-emotion="{{ $track->emotion }}"
                             style="color: inherit; text-decoration: none;">
-                            {{ $track->title }}
+                             {{ $track->title }}
                             </a>
                         </td>
                         <td>
@@ -94,24 +97,46 @@
         </div>
     </div>
 
-        <!-- Modal untuk Detail Emotion Track -->
+        <!-- Modal untuk Detail/Update Emotion Track -->
     <div class="modal fade" id="detailModal" tabindex="-1" aria-labelledby="detailModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="detailModalLabel">Emotion Track Detail</h5>
+                    <h5 class="modal-title" id="detailModalLabel">Update Emotion Track</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <div class="modal-body">
-                    <h5 id="modalTitle"></h5>
-                    <p id="modalContent"></p>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                </div>
+                <form id="updateForm" method="POST">
+                    @csrf
+                    @method('PUT')
+                    <div class="modal-body">
+                        <div class="mb-3">
+                            <label for="modalTitleInput" class="form-label">Title</label>
+                            <input type="text" id="modalTitleInput" name="title" class="form-control" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="modalContentInput" class="form-label">Content</label>
+                            <textarea id="modalContentInput" name="content" class="form-control" rows="3" required></textarea>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Emotion</label>
+                            <div>
+                                <button type="button" class="btn btn-outline-primary mx-2" onclick="setEmotion('happy')">😊</button>
+                                <button type="button" class="btn btn-outline-secondary mx-2" onclick="setEmotion('neutral')">😐</button>
+                                <button type="button" class="btn btn-outline-danger mx-2" onclick="setEmotion('sad')">😢</button>
+                            </div>
+                            <input type="hidden" id="modalEmotionInput" name="emotion">
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-primary">Update</button>
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    </div>
+                </form>
             </div>
         </div>
     </div>
+
+
 
     <script>
         function showEmoticonModal() {
@@ -147,6 +172,31 @@
             var emoticonModal = bootstrap.Modal.getInstance(document.getElementById('emoticonModal'));
             emoticonModal.hide();
         }
+
+        // Event listener untuk menangkap data saat modal ditampilkan
+    var detailModal = document.getElementById('detailModal');
+    detailModal.addEventListener('show.bs.modal', function (event) {
+        var button = event.relatedTarget; // Tombol yang diklik untuk membuka modal
+        var title = button.getAttribute('data-title'); // Ambil data-title
+        var content = button.getAttribute('data-content'); // Ambil data-content
+        var id = button.getAttribute('data-id'); // Ambil data-id
+        var emotion = button.getAttribute('data-emotion'); // Ambil data-emotion
+
+        // Isi form dengan data yang diambil
+        document.getElementById('modalTitleInput').value = title;
+        document.getElementById('modalContentInput').value = content;
+        document.getElementById('modalEmotionInput').value = emotion;
+
+        // Set action pada form update
+        var form = document.getElementById('updateForm');
+        form.action = '/emotion_track/' + id; // Sesuaikan dengan ID track
+    });
+
+
+    function setEmotion(emotion) {
+        document.getElementById('modalEmotionInput').value = emotion;
+    }
+
 
         // Event listener untuk menangkap data saat modal ditampilkan
     var detailModal = document.getElementById('detailModal');
