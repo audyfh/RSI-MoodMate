@@ -19,7 +19,7 @@ class UserSeeder extends Seeder
             [
                 'name' => 'Atmin',
                 'email' => 'admin@example.com',
-                'password' => Hash::make('password'), // Jangan lupa ganti dengan password yang lebih aman
+                'password' => Hash::make('password'), 
                 'role' => 'admin',
                 'email_verified_at' => now(),
                 'remember_token' => Str::random(10),
@@ -29,7 +29,7 @@ class UserSeeder extends Seeder
             [
                 'name' => 'Panasea',
                 'email' => 'psikolog@example.com',
-                'password' => Hash::make('password'), // Ganti juga password ini
+                'password' => Hash::make('password'),
                 'role' => 'psikolog',
                 'email_verified_at' => now(),
                 'remember_token' => Str::random(10),
@@ -39,7 +39,7 @@ class UserSeeder extends Seeder
             [
                 'name' => 'Mas Nur',
                 'email' => 'user@example.com',
-                'password' => Hash::make('password'), // Password user
+                'password' => Hash::make('password'), 
                 'role' => 'user',
                 'email_verified_at' => now(),
                 'remember_token' => Str::random(10),

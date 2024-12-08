@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Log;
 use App\Models\Quest;
 use App\Models\HappyQuest;
 use Illuminate\Http\Request;
@@ -33,13 +34,15 @@ class AdminQuestController extends Controller
     {
         $validated = $request->validate([
             'title' => 'required|string|max:255',
-            'description' => 'required|string'
+            'description' => 'required|string',
+            'is_active' => 'boolean'
         ]);
-
+    
+        // Explicitly set is_active to true
         $validated['is_active'] = true;
-
+    
         $quest->update($validated);
-
+    
         return redirect()->route('admin.happyquest')
             ->with('success', 'Quest updated successfully');
     }

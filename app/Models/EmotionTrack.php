@@ -11,7 +11,6 @@ class EmotionTrack extends Model
 
     protected $fillable = ['title', 'content', 'emotion', 'user_id'];
 
-    // Relasi dengan model User
     public function user()
     {
         return $this->belongsTo(User::class);

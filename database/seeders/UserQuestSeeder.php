@@ -18,9 +18,8 @@ class UserQuestSeeder extends Seeder
         $users = User::all();
         $quests = HappyQuest::all();
 
-        // Untuk setiap user, assign beberapa quest secara random
+        
         foreach ($users as $user) {
-            // Ambil 3-5 quest secara random
             $randomQuests = $quests->random(rand(3, 5));
 
             foreach ($randomQuests as $quest) {

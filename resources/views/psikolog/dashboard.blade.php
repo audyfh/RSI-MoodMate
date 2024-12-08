@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
 </head>
-<body>
+<body style="background-color: blue">
     <h1>Ini Dashboard psikolog</h1>
 </body>
 </html>

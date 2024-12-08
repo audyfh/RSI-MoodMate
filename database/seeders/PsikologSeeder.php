@@ -19,7 +19,7 @@ class PsikologSeeder extends Seeder
             'alamat' => 'Jl. Melati No.5, Pekanbaru',
             'nomor_telepon' => '081234567890',
             'email' => 'yanto@tulip.com',
-            'foto' => 'yanto.png' // Menyimpan nama file foto
+            'foto' => 'yanto.png' 
         ]);
 
         Psikolog::create([

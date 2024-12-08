@@ -22,7 +22,6 @@ class HappyQuestController extends Controller
     {
         $user = Auth::user();
     
-    // Validasi apakah quest sudah diselesaikan
     $existingQuest = UserQuest::where('user_id', $user->id)
         ->where('happy_quest_id', $quest->id)
         ->where('status', 'completed')
@@ -49,7 +48,6 @@ class HappyQuestController extends Controller
             ]
         );
 
-        // Tambahkan logika lain jika diperlukan (misalnya update XP, rewards, dll)
         
         DB::commit();
     

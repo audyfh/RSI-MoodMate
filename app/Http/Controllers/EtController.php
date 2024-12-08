@@ -25,7 +25,7 @@ class EtController extends Controller
             'title' => $request->title,
             'content' => $request->content,
             'emotion' => $request->emotion,
-            'user_id' => Auth::id()  // Menyimpan id user yang sedang login
+            'user_id' => Auth::id()  
         ]);
 
         return response()->json(['success' => 'Emotion Track berhasil disimpan']);
@@ -50,7 +50,7 @@ class EtController extends Controller
     }
 
 
-    // Menghapus data emotion track
+    
     public function destroy($id)
     {
         $emotionTrack = EmotionTrack::where('id', $id)->where('user_id', Auth::id())->firstOrFail();
